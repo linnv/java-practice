@@ -24,9 +24,24 @@ repositories {
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
-
+repositories {
+   flatDir {
+       dirs 'ext-lib'
+   }
+}
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-web")
     testCompile("org.springframework.boot:spring-boot-starter-test")
+       // compile("org.json.simple")
+compile ('com.googlecode.json-simple:json-simple:1.1.1')
+implementation files('ext-lib/comm.jar')
+implementation files('ext-lib/hessian-4.0.38.jar')
+implementation files('ext-lib/json-lib-2.4-jdk15.jar')
+implementation files('ext-lib/json-simple-1.1.1.jar')
+                
+          //compile (name:'comm.jar', ext:'com.ideal.ext')
+          // implementation name: 'com.ideal.ext'
+                 //   compile (name:'hessian-4.0.38.jar', ext:'com.caucho.hessian.io')
+    
 }
 
